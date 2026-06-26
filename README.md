@@ -11,7 +11,7 @@ accessibility experiments.
 ## Setup
 
 ```bash
-python -m pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
 PyAutoGUI sends OS-level keyboard input. On Linux, you may need a desktop session
@@ -28,26 +28,26 @@ control for your display server.
 Dry-run a sequence first:
 
 ```bash
-python src/jstris_keyboard_controller.py --dry-run left*2 rotate hard_drop
+python3 src/jstris_keyboard_controller.py --dry-run left*2 rotate hard_drop
 ```
 
 Send the same sequence after a 3 second focus countdown:
 
 ```bash
-python src/jstris_keyboard_controller.py left*2 rotate hard_drop
+python3 src/jstris_keyboard_controller.py left*2 rotate hard_drop
 ```
 
 Useful examples:
 
 ```bash
 # Hold, rotate counter-clockwise, hard drop.
-python src/jstris_keyboard_controller.py hold ccw drop
+python3 src/jstris_keyboard_controller.py hold ccw drop
 
 # Move right three times, wait briefly, rotate, then hard drop.
-python src/jstris_keyboard_controller.py right*3 wait:0.15 cw hd
+python3 src/jstris_keyboard_controller.py right*3 wait:0.15 cw hd
 
 # Use a slower cadence between keypresses.
-python src/jstris_keyboard_controller.py --delay 0.12 left left rotate drop
+python3 src/jstris_keyboard_controller.py --delay 0.12 left left rotate drop
 ```
 
 ## Supported actions
@@ -55,7 +55,7 @@ python src/jstris_keyboard_controller.py --delay 0.12 left left rotate drop
 Run:
 
 ```bash
-python src/jstris_keyboard_controller.py --list-actions
+python3 src/jstris_keyboard_controller.py --list-actions
 ```
 
 Default action mappings:
@@ -88,7 +88,7 @@ If your Jstris controls differ from the defaults, create a JSON file such as:
 Then run:
 
 ```bash
-python src/jstris_keyboard_controller.py --config my-keys.json hold rotate drop
+python3 src/jstris_keyboard_controller.py --config my-keys.json hold rotate drop
 ```
 
 The key names are PyAutoGUI key names.
@@ -96,5 +96,5 @@ The key names are PyAutoGUI key names.
 ## Tests
 
 ```bash
-python -m unittest discover
+python3 -m unittest discover
 ```
